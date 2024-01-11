@@ -11,7 +11,7 @@ interface BookService {
     suspend fun getNewBooks(): Response<Books>
 
     @GET("/search/{query}")
-    suspend fun searchBooks(@Path("query") query: String): Response<Books>
+    suspend fun searchForBooks(@Path("query") query: String): Response<Books>
 
     @GET("/books/{isbn13}")
     suspend fun getBookDetails(@Path("isbn13") id: String): Response<BookDetails>
