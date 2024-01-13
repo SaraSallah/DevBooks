@@ -8,18 +8,15 @@ import com.example.storyscope.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>(), BookInteractionListener {
+class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override val TAG: String = this::class.simpleName.toString()
     override val layoutIdFragment: Int = R.layout.fragment_home
     override val viewModel: HomeViewModel by viewModels()
 
 
     override fun setUp() {
-        val adapter = BooksAdapter(mutableListOf<BookUiState>(), this)
+        val adapter = BooksAdapter(mutableListOf(), viewModel)
         binding.rvBook.adapter = adapter
     }
 
-    override fun onClickBook(bookId: Int) {
-        Toast.makeText(requireContext(), "heeeey ", Toast.LENGTH_LONG).show()
-    }
 }

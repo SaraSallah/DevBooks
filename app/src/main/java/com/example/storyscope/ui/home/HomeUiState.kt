@@ -6,7 +6,6 @@ data class HomeUiState(
     val isLoading: Boolean = false,
     val isError: Boolean = false,
     val books : List<BookUiState> = emptyList() ,
-    val book: BookUiState = BookUiState(),
 )
 
 data class BookUiState(

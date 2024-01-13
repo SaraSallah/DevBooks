@@ -25,7 +25,6 @@ class BooksAdapter(private var items: List<BookUiState>,
     }
     fun setItems(newList :  List<BookUiState>){
         items = newList
-
     }
     class BooksViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding = ItemBookBinding.bind(itemView)

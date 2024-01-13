@@ -1,5 +1,6 @@
 package com.example.storyscope.ui.home
 
+import android.widget.Toast
 import com.example.storyscope.data.repository.StoryScopeRepository
 import com.example.storyscope.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -9,7 +10,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val storyScopeRepository: StoryScopeRepository,
-) : BaseViewModel<HomeUiState>(HomeUiState()) {
+) : BaseViewModel<HomeUiState>(HomeUiState()),BookInteractionListener {
     override val Tag: String = this::class.java.simpleName
 
     init {
@@ -38,5 +39,9 @@ class HomeViewModel @Inject constructor(
 
     private fun onError(error: String) {
         _state.update { it.copy(isLoading = false, isError = true) }
+    }
+
+    override fun onClickBook(bookId: Int) {
+        log("hh")
     }
 }
