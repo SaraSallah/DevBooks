@@ -17,10 +17,10 @@ abstract class BaseViewModel<T>(initialState: T) : ViewModel() {
     protected val _state = MutableStateFlow(initialState)
     val state = _state.asStateFlow()
 
-    protected fun tryToExecute(
+    protected fun <T>tryToExecute(
         function: suspend () -> T,
         onSuccess: (T) -> Unit,
-        onError: (Throwable) -> Unit,
+        onError: (errorMessage: String) -> Unit,
         dispatcher: CoroutineDispatcher = Dispatchers.IO,
     ) {
         viewModelScope.launch(dispatcher) {
@@ -28,8 +28,10 @@ abstract class BaseViewModel<T>(initialState: T) : ViewModel() {
                 val result = function()
                 log("tryToExecute: $result")
                 onSuccess(result)
-            } catch (exception: Throwable) {
-                log("onError : $exception")
+            } catch (e: Exception) {
+                log("onError : ${e.message}")
+                onError(e.message.toString())
+
 
             }
         }

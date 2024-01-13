@@ -7,12 +7,12 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface StoryScopeServices {
-    @GET("/new")
+    @GET("new")
     suspend fun getNewBooks(): Response<Books>
 
-    @GET("/search/{query}")
+    @GET("search/{query}")
     suspend fun searchForBooks(@Path("query") query: String): Response<Books>
 
-    @GET("/books/{isbn13}")
+    @GET("books/{isbn13}")
     suspend fun getBookDetails(@Path("isbn13") id: String): Response<BookDetails>
 }
