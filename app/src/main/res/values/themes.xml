@@ -3,7 +3,17 @@
     <style name="Base.Theme.StoryScope" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorOnPrimary">@color/primary_100</item>
+        <item name="colorPrimaryContainer">@color/primary_200</item>
+
+        <item name="android:statusBarColor">@color/primary_200</item>
+
+
     </style>
 
     <style name="Theme.StoryScope" parent="Base.Theme.StoryScope" />
+    <style name="headerStyle" parent="">
+        <item name="android:textColor">@color/black_87</item>
+        <item name="android:fontFamily">@font/josefinsans_medium</item>
+    </style>
 </resources>

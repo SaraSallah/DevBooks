@@ -74,4 +74,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0") // Core module
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0") // Android module
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.0")
+
+    // lottie dependency
+    implementation 'com.airbnb.android:lottie:6.0.0'
 }
