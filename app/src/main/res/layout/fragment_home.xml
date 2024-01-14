@@ -51,6 +51,19 @@
                     android:text="Story Scope Bookstore
 IT, Programming and Computer Science Books"
                     android:textSize="@dimen/text_20" />
+                <SearchView
+                    android:id="@+id/search_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/space_16"
+                    android:backgroundTint="@color/black_38"
+                    android:imeOptions="flagNoFullscreen"
+                    android:iconifiedByDefault="false"
+                    android:queryBackground="@null"
+                    android:queryHint="Search"
+                    android:searchIcon="@drawable/ic_search"
+                    android:theme="@style/ThemeOverlay.Material3.Search"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
             </LinearLayout>
