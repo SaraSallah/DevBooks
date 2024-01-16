@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace 'com.example.storyscope'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.storyscope"
@@ -68,10 +68,13 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:1.5.7"
 
     // hilt dependency
-    implementation "com.google.dagger:hilt-android:2.44"
-    kapt "com.google.dagger:hilt-compiler:2.44"
+    implementation 'com.google.dagger:hilt-android:2.48'
+    kapt 'com.google.dagger:hilt-compiler:2.48'
     // coroutines dependency
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0") // Core module
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0") // Android module
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.0")
+
+    // lottie dependency
+    implementation 'com.airbnb.android:lottie:6.0.0'
 }

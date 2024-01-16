@@ -1,7 +1,17 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.StoryScope" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorOnPrimary">@color/primary_100</item>
+        <item name="colorPrimaryContainer">@color/primary_200</item>
+
+        <item name="android:statusBarColor">@color/primary_200</item>
+
     </style>
+    <style name="headerStyle" parent="">
+        <item name="android:textColor">@color/white_100</item>
+        <item name="android:fontFamily">@font/josefinsans_medium</item>
+    </style>
+
 </resources>

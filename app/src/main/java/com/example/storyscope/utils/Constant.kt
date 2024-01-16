@@ -1,5 +1,5 @@
 package com.example.storyscope.utils
 
 object Constant {
-    const val BASE_URL = "https://api.itbook.store/"
+    const val BASE_URL = "https://api.itbook.store/1.0/"
 }
