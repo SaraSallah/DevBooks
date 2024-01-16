@@ -23,14 +23,14 @@
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_poster"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="190dp"
                 app:imageUrl="@{item.image}"
                 android:shadowRadius="@integer/google_play_services_version"
                 tools:background="@drawable/book_place_holder"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintCircleRadius="@dimen/text_20"/>
+                app:layout_constraintCircleRadius="@dimen/space_8"/>
 
             <TextView
                 android:id="@+id/text_title"
