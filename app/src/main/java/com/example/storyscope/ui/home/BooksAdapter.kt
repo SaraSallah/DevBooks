@@ -31,6 +31,6 @@ class BooksAdapter(private var items: List<BookUiState>,
     }
 }
 interface BookInteractionListener {
-    fun onClickBook(bookId : Int)
+    fun onClickBook(bookId : String)
 
 }
