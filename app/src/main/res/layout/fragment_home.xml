@@ -23,7 +23,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/space_16"
                 android:orientation="vertical"
-                app:layout_constraintBottom_toTopOf="@+id/rv_book"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -63,7 +62,7 @@
                     android:layout_marginStart="@dimen/space_16"
                     android:layout_marginTop="@dimen/space_16"
                     android:fontFamily="@font/josefinsans_semibold"
-                    android:text="Story Scope Bookstore
+                    android:text="Dev Books Bookstore
 IT, Programming and Computer Science Books"
                     android:textSize="@dimen/text_20" />
 
@@ -83,19 +82,21 @@ IT, Programming and Computer Science Books"
                 app:lottie_rawRes="@raw/loading_circle_red"
                 app:showWhenLoading="@{viewModel.state.loading}" />
 
-            <androidx.recyclerview.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_book"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-                android:layout_marginTop="@dimen/space_16"
-                app:items="@{viewModel.state.books}"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/home_header"
-                app:showIfNotEmpty="@{viewModel.state.books}"
-                app:spanCount="2"
-                tools:listitem="@layout/item_book" />
+            android:layout_marginTop="8dp"
+            android:clipToPadding="false"
+            app:items="@{viewModel.state.books}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_header"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:showIfNotEmpty="@{viewModel.state.books}"
+            app:spanCount="2"
+            tools:listitem="@layout/item_book" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

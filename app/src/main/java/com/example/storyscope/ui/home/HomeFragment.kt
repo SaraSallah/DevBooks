@@ -14,7 +14,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override val TAG: String = this::class.simpleName.toString()
     override val layoutIdFragment: Int = R.layout.fragment_home
     override val viewModel: HomeViewModel by viewModels()
-
+    private val booksAdapter : BooksAdapter by lazy {BooksAdapter(viewModel)  }
 
     override fun setUp() {
        initAdapter()
@@ -23,8 +23,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun initAdapter() {
-        val adapter = BooksAdapter(mutableListOf(), viewModel)
-        binding.rvBook.adapter = adapter
+        binding.rvBook.adapter = booksAdapter
 
     }
     private fun collectActions(){

@@ -1,5 +1,6 @@
 package com.example.storyscope.ui.home
 
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.viewModelScope
 import com.example.storyscope.data.repository.StoryScopeRepository
 import com.example.storyscope.ui.base.BaseViewModel
