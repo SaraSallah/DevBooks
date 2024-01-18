@@ -21,7 +21,7 @@ data class BookDetails(
     @SerializedName("pages")
     val pages: String? = null,
     @SerializedName("pdf")
-    val pdf: List<String>? = null,
+    val pdf: Map<String,String>? = null,
     @SerializedName("price")
     val price: String? = null,
     @SerializedName("publisher")

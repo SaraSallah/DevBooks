@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.book_details.BookDetailsFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.storyscope.ui.book_details.BookDetailsViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".ui.book_details.BookDetailsFragment">
 
-</FrameLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgae_book"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/space_16"
+            app:imageUrl="@{viewModel.state.bookDetails.image}"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/book_place_holder" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/josefinsans_semibold"
+            android:textSize="@dimen/text_24"
+            android:text="@{viewModel.state.bookDetails.title}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgae_book"
+            tools:text="C++ book Guid in Some error woow oki hhh hfhb"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/space_8"
+            android:paddingHorizontal="@dimen/space_16"/>
+
+        <TextView
+            android:id="@+id/text_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/josefinsans_medium"
+            android:text='@{"by:"+viewModel.state.bookDetails.authors}'
+            android:textSize="@dimen/text_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_title"
+            tools:text="by Sara Salah"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/space_8"
+            android:paddingHorizontal="@dimen/space_16"/>
+
+        <TextView
+            android:id="@+id/text_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.state.bookDetails.description}"
+            android:textSize="@dimen/text_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_author"
+            tools:text="Sara Sara Sara Sara Sara Sara Sara Sara Sara Sara Sara Sara Sara Sara Sara
+             Sara Sara Sara Sara Sara Sara Sara Sara Sara Sara Sara Sara Sara Sara Sara Sara Sara
+             Sara "
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/space_8"
+            android:paddingHorizontal="@dimen/space_16"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rounded"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Buy"
+            android:textColor="@color/white_100"
+            android:textSize="@dimen/text_20"
+            android:layout_marginHorizontal="@dimen/text_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

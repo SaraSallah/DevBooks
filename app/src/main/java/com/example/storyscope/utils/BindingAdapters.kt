@@ -7,9 +7,7 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.storyscope.R
-import com.example.storyscope.data.remote.model.Book
-import com.example.storyscope.ui.home.BookUiState
-import com.example.storyscope.ui.home.BooksAdapter
+import com.example.storyscope.ui.base.BaseAdapter
 
 @BindingAdapter(value = ["app:imageUrl"])
 fun setImageFromUrl(view: ImageView, url: String?) {
@@ -46,12 +44,12 @@ fun showWhenError(view: View, state: Boolean) {
 }
 
 @BindingAdapter(value = ["app:items"])
-fun setRecyclerItems(view: RecyclerView, items: List<BookUiState>?) {
-    if (items != null)
-        (view.adapter as BooksAdapter?)?.setItems(items)
-    else
-        (view.adapter as BooksAdapter?)?.setItems(emptyList())
+fun <T> setRecyclerItems(view: RecyclerView, items: List<T>?) {
+    (view.adapter as BaseAdapter<T>?)?.setItems(items ?: emptyList())
+
+
 }
+
 @BindingAdapter("app:showIfNotEmpty")
 fun <T> showIfNotEmpty(view: View, items: List<T>) {
     view.isVisible = items.isNotEmpty()
