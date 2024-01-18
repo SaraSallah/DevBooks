@@ -25,6 +25,7 @@
                 android:layout_height="190dp"
                 app:imageUrl="@{item.image}"
                 android:shadowRadius="@integer/google_play_services_version"
+                android:scaleType="centerCrop"
                 tools:background="@drawable/book_place_holder"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
