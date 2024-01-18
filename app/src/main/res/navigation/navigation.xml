@@ -14,7 +14,9 @@
             android:id="@+id/action_homeFragment_to_bookDetailsFragment"
             app:destination="@id/bookDetailsFragment"
             app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
         <action
             android:id="@+id/action_homeFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
@@ -23,7 +25,11 @@
         android:id="@+id/bookDetailsFragment"
         tools:layout="@layout/fragment_book_details"
         android:name="com.example.storyscope.ui.book_details.BookDetailsFragment"
-        android:label="BookDetailsFragment" >
+        android:label="BookDetailsFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right">
         <argument
             android:name="bookId"
             app:argType="string" />
@@ -32,5 +38,13 @@
         android:id="@+id/searchFragment"
         android:name="com.example.storyscope.ui.search.SearchFragment"
         android:label="SearchFragment"
-        tools:layout="@layout/fragment_search"/>
+        tools:layout="@layout/fragment_search"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right">
+        <action
+            android:id="@+id/action_searchFragment_to_bookDetailsFragment"
+            app:destination="@id/bookDetailsFragment" />
+    </fragment>
 </navigation>
