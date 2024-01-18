@@ -7,9 +7,9 @@
         <variable
             name="item"
             type="com.example.storyscope.ui.home.BookUiState" />
-<!--        <variable-->
-<!--            name="listener"-->
-<!--            type="" />-->
+        <variable
+            name="listener"
+            type="com.example.storyscope.ui.search.SearchInteractionListener" />
 
     </data>
 
@@ -17,7 +17,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:layout_margin="@dimen/space_8">
+        android:layout_margin="@dimen/space_8"
+        android:onClick="@{()->listener.onClickBook(item.id)}">
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/image_poster"
             android:layout_width="match_parent"

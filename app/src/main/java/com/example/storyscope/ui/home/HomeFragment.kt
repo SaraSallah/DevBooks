@@ -11,7 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
-    override val TAG: String = this::class.simpleName.toString()
+    override val TAG: String = this::class.java.simpleName
     override val layoutIdFragment: Int = R.layout.fragment_home
     override val viewModel: HomeViewModel by viewModels()
     private val booksAdapter : BooksAdapter by lazy {BooksAdapter(viewModel)  }
@@ -29,8 +29,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private fun collectActions(){
         collect(viewModel.effect){effect->
             effect.getContentIfHandled()?.let { onEffect(it) }
-
-
         }
     }
 
@@ -49,7 +47,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
     private fun navigateToBookDetails(bookId : String){
         val action =HomeFragmentDirections.actionHomeFragmentToBookDetailsFragment(bookId)
-        findNavController().navigate(bookId)
+        findNavController().navigate(action)
 
     }
 

@@ -45,7 +45,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:showIfNotEmpty="@{viewModel.state.books}"
             app:spanCount="2"
-            tools:listitem="@layout/item_book" />
+            tools:listitem="@layout/item_book_search" />
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="100dp"
             android:layout_height="100dp"
