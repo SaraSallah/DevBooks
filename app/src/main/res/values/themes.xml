@@ -3,10 +3,13 @@
     <style name="Base.Theme.StoryScope" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorOnPrimary">@color/primary_100</item>
-        <item name="colorPrimaryContainer">@color/primary_200</item>
+<!--        <item name="colorOnPrimary">@color/primary_100</item>-->
+<!--        <item name="colorPrimaryContainer">@color/primary_200</item>-->
 
         <item name="android:statusBarColor">@color/primary_200</item>
+
+        <item name="android:colorBackground">@color/white_200</item>
+
 
 
     </style>
@@ -17,9 +20,21 @@
         <item name="android:fontFamily">@font/josefinsans_medium</item>
     </style>
     <style name="Theme.DevBooks.Splash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/primary_100</item>
+        <item name="windowSplashScreenBackground">@color/primary_200</item>
         <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">2000</item>
         <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@mipmap/ic_launcher_round</item>
         <item name="postSplashScreenTheme">@style/Base.Theme.StoryScope</item>
->    </style>
+   </style>
+
+    <style name="Widget.MaterialRatingBar.RatingBar" parent="android:Widget.RatingBar">
+
+        <item name="android:indeterminateDrawable">@null</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:maxHeight">36dp</item>
+    </style>
+    <style name="Widget.MaterialRatingBar.RatingBar.Small">
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">16dp</item>
+    </style>
+
 </resources>

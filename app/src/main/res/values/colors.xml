@@ -3,7 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary_100">#DF2E38</color>
-    <color name="primary_200">#BD0E24</color>
+    <color name="primary_200">#8F142C</color>
     <color name="background_dark">#333333</color>
     <color name="white_200">#FAFAFA</color>
     <color name="white_100">#FFFFFF</color>
@@ -12,4 +12,5 @@
     <color name="black_60">#99121212</color>
     <color name="black_38">#61121212</color>
     <color name="black_8">#14121212</color>
+    <color name="gold">#FFD700</color>
 </resources>
