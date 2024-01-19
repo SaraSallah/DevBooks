@@ -20,7 +20,7 @@
         <item name="android:fontFamily">@font/josefinsans_medium</item>
     </style>
     <style name="Theme.DevBooks.Splash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/primary_100</item>
+        <item name="windowSplashScreenBackground">@color/primary_200</item>
         <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">2000</item>
         <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@mipmap/ic_launcher_round</item>
         <item name="postSplashScreenTheme">@style/Base.Theme.StoryScope</item>
