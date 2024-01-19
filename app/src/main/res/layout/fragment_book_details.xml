@@ -108,6 +108,7 @@
             android:layout_marginBottom="@dimen/space_16"
             app:hideIfLoading="@{viewModel.state.loading}"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:onClick="@{()-> viewModel.onClickBuyButton(viewModel.state.bookDetails.url)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_price" />
 
