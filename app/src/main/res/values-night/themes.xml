@@ -3,10 +3,11 @@
     <style name="Base.Theme.StoryScope" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
-        <item name="colorOnPrimary">@color/primary_100</item>
-        <item name="colorPrimaryContainer">@color/primary_200</item>
+<!--        <item name="colorOnPrimary">@color/primary_100</item>-->
+<!--        <item name="colorPrimaryContainer">@color/primary_200</item>-->
 
         <item name="android:statusBarColor">@color/primary_200</item>
+        <item name="android:colorBackground">@color/black_87</item>
 
     </style>
     <style name="headerStyle" parent="">
@@ -21,5 +22,17 @@
         <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@mipmap/ic_launcher_round</item>
         <item name="postSplashScreenTheme">@style/Base.Theme.StoryScope</item>
     </style>
+    <style name="Widget.MaterialRatingBar.RatingBar" parent="android:Widget.RatingBar">
+
+        -->
+        <item name="android:indeterminateDrawable">@null</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:maxHeight">36dp</item>
+    </style>
+    <style name="Widget.MaterialRatingBar.RatingBar.Small">
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">16dp</item>
+    </style>
+
 
 </resources>
