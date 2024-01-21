@@ -6,4 +6,5 @@ data class SearchUiState(
     val isLoading: Boolean = false,
     val isError: Boolean = false,
     val books: List<BookUiState> = emptyList(),
+    val query : String = "",
 )
