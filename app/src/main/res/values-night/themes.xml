@@ -14,6 +14,11 @@
         <item name="android:textColor">@color/white_100</item>
         <item name="android:fontFamily">@font/josefinsans_medium</item>
     </style>
+    <style name="cardView" parent="Base.CardView">
+        <item name="cardBackgroundColor">@color/card_background_dark</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardCornerRadius">@dimen/space_4</item>
+    </style>
 
 
     <style name="Theme.DevBooks.Splash" parent="Theme.SplashScreen">
