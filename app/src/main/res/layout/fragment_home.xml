@@ -125,7 +125,7 @@
             android:layout_marginHorizontal="@dimen/space_16"
             android:background="@drawable/background_rounded"
             android:fontFamily="@font/josefinsans_medium"
-            android:text="Try Again"
+            android:text="@string/try_again"
             android:textAllCaps="false"
             android:textColor="@color/white_100"
             android:textSize="@dimen/text_20"

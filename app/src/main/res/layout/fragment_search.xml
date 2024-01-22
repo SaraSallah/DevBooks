@@ -38,6 +38,8 @@
             android:layout_marginTop="8dp"
             android:clipToPadding="false"
             app:items="@{viewModel.state.books}"
+            app:hideWhenError="@{viewModel.state.error}"
+            app:hideIfLoading="@{viewModel.state.loading}"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -66,6 +68,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/search"
             app:layout_constraintEnd_toEndOf="parent"
+            app:hideWhenError="@{viewModel.state.error}"
             app:hideWhenNotFound="@{viewModel.state.books}"
             app:hideWhenSearch="@{viewModel.state.query}"
             app:layout_constraintStart_toStartOf="parent"
@@ -83,6 +86,8 @@
             android:textSize="@dimen/text_20"
             app:hideWhenNotFound="@{viewModel.state.books}"
             app:hideWhenSearch="@{viewModel.state.query}"
+            app:hideWhenError="@{viewModel.state.error}"
+            app:hideIfLoading="@{viewModel.state.loading}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/image_search" />
@@ -98,6 +103,8 @@
             app:lottie_rawRes="@raw/not_found"
             app:showIfEmpty="@{viewModel.state.books}"
             app:hideWhenEmptyQuery="@{viewModel.state.query}"
+            app:hideWhenError="@{viewModel.state.error}"
+            app:hideIfLoading="@{viewModel.state.loading}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/search_bar" />
@@ -109,36 +116,13 @@
             android:text="Not Found"
             app:showIfEmpty="@{viewModel.state.books}"
             app:hideWhenEmptyQuery="@{viewModel.state.query}"
+            app:hideWhenError="@{viewModel.state.error}"
+            app:hideIfLoading="@{viewModel.state.loading}"
             android:paddingHorizontal="@dimen/space_16"
             android:textSize="@dimen/text_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_not_found"/>
-        <com.google.android.material.imageview.ShapeableImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/no_internet"
-            app:layout_constraintTop_toBottomOf="@id/search_bar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:src="@drawable/no_internet"
-            app:showWhenError="@{viewModel.state.error}"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/josefinsans_semibold"
-            android:gravity="start"
-            android:text="No Internet Connection"
-            android:paddingHorizontal="@dimen/space_16"
-            android:textSize="@dimen/text_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:showWhenError="@{viewModel.state.error}"
-            app:layout_constraintTop_toBottomOf="@id/no_internet"/>
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
