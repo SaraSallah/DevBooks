@@ -5,4 +5,6 @@
     <string name="header_title">DevBooks Bookstore </string>
     <string name="discover_books">Discover coding insights in our books. From languages to frameworks, boost your skills with our curated selection.</string>
     <string name="buy">Buy</string>
+    <string name="try_again">Try Again</string>
+    <string name="no_internet_connection">No Internet Connection</string>
 </resources>

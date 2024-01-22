@@ -165,7 +165,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/josefinsans_semibold"
             android:gravity="start"
-            android:text="No Internet Connection"
+            android:text="@string/no_internet_connection"
             android:paddingHorizontal="@dimen/space_16"
             android:textSize="@dimen/text_24"
             app:layout_constraintEnd_toEndOf="parent"
