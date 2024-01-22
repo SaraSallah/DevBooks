@@ -2,6 +2,7 @@
     <string name="app_name">Dev Books</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="header_title">Dev Books Bookstore IT, Programming and Computer Science Books</string>
+    <string name="header_title">DevBooks Bookstore </string>
     <string name="discover_books">Discover coding insights in our books. From languages to frameworks, boost your skills with our curated selection.</string>
+    <string name="buy">Buy</string>
 </resources>
