@@ -38,8 +38,6 @@
             android:layout_marginTop="8dp"
             android:clipToPadding="false"
             app:items="@{viewModel.state.books}"
-            app:hideWhenError="@{viewModel.state.error}"
-            app:hideIfLoading="@{viewModel.state.loading}"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
