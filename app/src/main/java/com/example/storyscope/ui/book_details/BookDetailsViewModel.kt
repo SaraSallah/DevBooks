@@ -21,13 +21,13 @@ class BookDetailsViewModel @Inject constructor(
         BookDetailsFragmentArgs.fromSavedStateHandle(savedStateHandle)
 
     init {
-        getBookDetails(args.bookId)
+        getBookDetails()
     }
 
-    private fun getBookDetails(bookId: String) {
+     fun getBookDetails() {
         _state.update { it.copy(isLoading = true) }
         tryToExecute(
-            { repository.getBookDetails(bookId).toBookDetailsUiState() },
+            { repository.getBookDetails(args.bookId).toBookDetailsUiState() },
             ::onGetBookDetailsSuccess,
             ::onGetBookDetailsError
         )
