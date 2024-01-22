@@ -53,7 +53,6 @@
                 </LinearLayout>
 
 
-
                 <TextView
                     android:id="@+id/text"
                     style="@style/headerStyle"
@@ -62,11 +61,8 @@
                     android:layout_marginStart="@dimen/space_16"
                     android:layout_marginTop="@dimen/space_16"
                     android:fontFamily="@font/josefinsans_semibold"
-                    android:text="Dev Books Bookstore
-IT, Programming and Computer Science Books"
+                    android:text="@string/header_title"
                     android:textSize="@dimen/text_20" />
-
-
 
             </LinearLayout>
 
@@ -90,13 +86,55 @@ IT, Programming and Computer Science Books"
             android:clipToPadding="false"
             app:items="@{viewModel.state.books}"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/home_header"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             app:showIfNotEmpty="@{viewModel.state.books}"
             app:spanCount="2"
             tools:listitem="@layout/item_book" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/no_internet"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/no_internet"
+            app:showWhenError="@{viewModel.state.error}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@id/text_no_internet_connection"
+            android:fontFamily="@font/josefinsans_semibold"
+            android:gravity="start"
+            android:text="No Internet Connection"
+            android:paddingHorizontal="@dimen/space_16"
+            android:textSize="@dimen/text_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:showWhenError="@{viewModel.state.error}"
+            app:layout_constraintTop_toBottomOf="@id/no_internet"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_16"
+            android:background="@drawable/background_rounded"
+            android:fontFamily="@font/josefinsans_medium"
+            android:text="@string/try_again"
+            android:textAllCaps="false"
+            android:textColor="@color/white_100"
+            android:textSize="@dimen/text_20"
+            app:layout_constraintTop_toBottomOf="@id/text_no_internet_connection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/space_16"
+            app:showWhenError="@{viewModel.state.error}"
+            android:onClick="@{()-> viewModel.getNewBooks()}"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

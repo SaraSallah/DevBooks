@@ -21,7 +21,7 @@ class HomeViewModel @Inject constructor(
 
     }
 
-    private fun getNewBooks() {
+     fun getNewBooks() {
         _state.update { it.copy(isLoading = true, isError = false) }
         tryToExecute(
             { storyScopeRepository.getNewBooks().books!!.map { it!!.toBookUiState() } },

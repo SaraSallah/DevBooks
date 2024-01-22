@@ -38,7 +38,7 @@ fun BookDetails.toBookDetailsUiState(): BookDetailsUiState = BookDetailsUiState(
     language = language,
     publisher = publisher,
     pdf = pdf,
-    authors = authors,
+    authors = "by: $authors",
     description = desc
 )
 fun String.rateToInteger(rate: String):Int

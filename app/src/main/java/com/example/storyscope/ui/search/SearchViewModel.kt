@@ -19,7 +19,7 @@ class SearchViewModel @Inject constructor(
     override val Tag: String = this::class.java.simpleName
 
     fun searchForBooks(query : String){
-        _state.update { it.copy(isLoading = true) }
+        _state.update { it.copy(isLoading = true , query = query) }
         tryToExecute(
             { repository.searchForBooks(query).books!!.map { it!!.toBookUiState() } },
             ::onGetSearchedBooksSuccess,
