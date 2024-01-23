@@ -1,6 +1,6 @@
 package com.example.storyscope.di
 
-import com.example.storyscope.data.api.StoryScopeServices
+import com.example.storyscope.data.api.DevBookServices
 import com.example.storyscope.utils.Constant
 import dagger.Module
 import dagger.Provides
@@ -45,6 +45,6 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApiServices(retrofit: Retrofit): StoryScopeServices =
-        retrofit.create(StoryScopeServices::class.java)
+    fun provideApiServices(retrofit: Retrofit): DevBookServices =
+        retrofit.create(DevBookServices::class.java)
 }

@@ -1,13 +1,13 @@
 package com.example.storyscope.data.repository
 
-import com.example.storyscope.data.api.StoryScopeServices
+import com.example.storyscope.data.api.DevBookServices
 import com.example.storyscope.data.remote.model.BookDetails
 import com.example.storyscope.data.remote.model.Books
 import retrofit2.Response
 import javax.inject.Inject
 
-class StoryScopeRepository @Inject constructor(
-    private val api: StoryScopeServices,
+class DevBooksRepository @Inject constructor(
+    private val api: DevBookServices,
 ) {
     suspend fun getNewBooks(): Books = wrap { api.getNewBooks() }
     suspend fun searchForBooks(query: String): Books = wrap { api.searchForBooks(query) }

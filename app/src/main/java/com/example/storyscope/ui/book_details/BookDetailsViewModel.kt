@@ -2,7 +2,7 @@ package com.example.storyscope.ui.book_details
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
-import com.example.storyscope.data.repository.StoryScopeRepository
+import com.example.storyscope.data.repository.DevBooksRepository
 import com.example.storyscope.ui.base.BaseViewModel
 import com.example.storyscope.utils.EventHandler
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -12,19 +12,18 @@ import javax.inject.Inject
 
 @HiltViewModel
 class BookDetailsViewModel @Inject constructor(
-    private val repository: StoryScopeRepository,
+    private val repository: DevBooksRepository,
     savedStateHandle: SavedStateHandle,
 ) : BaseViewModel<BookDetailsScreenUiState, String>(BookDetailsScreenUiState()) {
 
     override val Tag: String = this::class.java.simpleName
-    private val args =
-        BookDetailsFragmentArgs.fromSavedStateHandle(savedStateHandle)
+    private val args = BookDetailsFragmentArgs.fromSavedStateHandle(savedStateHandle)
 
     init {
         getBookDetails()
     }
 
-     fun getBookDetails() {
+     private fun getBookDetails() {
         _state.update { it.copy(isLoading = true) }
         tryToExecute(
             { repository.getBookDetails(args.bookId).toBookDetailsUiState() },

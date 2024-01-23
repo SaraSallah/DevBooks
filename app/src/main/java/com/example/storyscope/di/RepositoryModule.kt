@@ -1,7 +1,7 @@
 package com.example.storyscope.di
 
-import com.example.storyscope.data.api.StoryScopeServices
-import com.example.storyscope.data.repository.StoryScopeRepository
+import com.example.storyscope.data.api.DevBookServices
+import com.example.storyscope.data.repository.DevBooksRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,8 +13,8 @@ import javax.inject.Singleton
 object RepositoryModule {
     @Singleton
     @Provides
-    fun provideBookRepository(api : StoryScopeServices):StoryScopeRepository{
-        return StoryScopeRepository(api)
+    fun provideBookRepository(api : DevBookServices):DevBooksRepository{
+        return DevBooksRepository(api)
     }
 
 }

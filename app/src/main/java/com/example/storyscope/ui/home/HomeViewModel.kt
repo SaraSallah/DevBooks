@@ -1,8 +1,7 @@
 package com.example.storyscope.ui.home
 
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.viewModelScope
-import com.example.storyscope.data.repository.StoryScopeRepository
+import com.example.storyscope.data.repository.DevBooksRepository
 import com.example.storyscope.ui.base.BaseViewModel
 import com.example.storyscope.utils.EventHandler
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -12,7 +11,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val storyScopeRepository: StoryScopeRepository,
+    private val storyScopeRepository: DevBooksRepository,
 ) : BaseViewModel<HomeUiState, HomeUiEffect>(HomeUiState()), BookInteractionListener {
     override val Tag: String = this::class.java.simpleName
 

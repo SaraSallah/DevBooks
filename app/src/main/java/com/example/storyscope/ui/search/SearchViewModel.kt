@@ -1,7 +1,7 @@
 package com.example.storyscope.ui.search
 
 import androidx.lifecycle.viewModelScope
-import com.example.storyscope.data.repository.StoryScopeRepository
+import com.example.storyscope.data.repository.DevBooksRepository
 import com.example.storyscope.ui.base.BaseViewModel
 import com.example.storyscope.ui.home.BookUiState
 import com.example.storyscope.ui.home.toBookUiState
@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SearchViewModel @Inject constructor(
-    private val repository: StoryScopeRepository
+    private val repository: DevBooksRepository
 ) : BaseViewModel<SearchUiState, String>(SearchUiState()),SearchInteractionListener {
 
     override val Tag: String = this::class.java.simpleName
